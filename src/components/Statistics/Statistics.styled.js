@@ -24,10 +24,10 @@ export const Item = styled.li`
   align-items: center;
   padding: 15px;
   `;
-  export const Label = styled.li`
+  export const Label = styled.span`
   font-size: 12px;
   margin-bottom: 5px`;
   
-  export const Quantity = styled.li`
+  export const Quantity = styled.span`
   font-weight: 700;`;
 

@@ -2,38 +2,39 @@ import {Card, InfoContainer, Name, Tag, Location, List, Item, Label, Quantity } 
 import PropTypes from 'prop-types';
 
 export const Profile = ({users: {username, tag, location, avatar, stats: {followers, views, likes} }}) => {
-    return <Card class="profile">
-    <InfoContainer class="description">
+    return <Card className="profile">
+    <InfoContainer className="description">
       <img
         src={avatar}
         alt={username}
-        class="avatar"
+        className="avatar"
         width="200"
       />
-      <Name  class="name">{username}</Name >
-      <Tag class="tag">{tag}</Tag>
-      <Location class="location">{location}</Location>
+      <Name  className='name'>{username}</Name >
+      <Tag className="tag">{tag}</Tag>
+      <Location className="location">{location}</Location>
     </InfoContainer>
   
-    <List class="stats">
+    <List className="stats">
       <Item>
-        <Label class="label">Follower</Label>
-        <Quantity class="quantity">{followers}</Quantity>
+        <Label className="label">Follower</Label>
+        <Quantity className="quantity">{followers}</Quantity>
       </Item>
       <Item>
-        <Label class="label">Views</Label>
-        <Quantity class="quantity">{views}</Quantity>
+        <Label className="label">Views</Label>
+        <Quantity className="quantity">{views}</Quantity>
       </Item>
       <Item>
-        <Label class="label">Likes</Label>
-        <Quantity class="quantity">{likes}</Quantity>
+        <Label className="label">Likes</Label>
+        <Quantity className="quantity">{likes}</Quantity>
       </Item>
     </List>
   </Card>
 };
 
 Profile.propTypes = {
-  username: PropTypes.string.isRequired,
+  users: PropTypes.shape({
+    username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string,
@@ -42,4 +43,6 @@ Profile.propTypes = {
     views: PropTypes.number,
     likes: PropTypes.number,
   }),
+  })
+  
 };
