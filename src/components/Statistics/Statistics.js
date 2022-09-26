@@ -8,8 +8,8 @@ export const Statictics = ({stats}) => {
   
     <List className="stat-list">
        {stats.map(s => <Item key={s.id} className="item">
-        <Label className="label">{s.label}</Label>
-    <Quantity className="percentage">{s.percentage}</Quantity>
+        <Label className="label">{s.label}%</Label>
+    <Quantity className="percentage">{s.percentage}%</Quantity>
       </Item>)
       }
       
